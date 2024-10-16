@@ -1,13 +1,7 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[4]:
-
-
 import streamlit as st
 import numpy as np
+import pandas as pd
 import joblib
-from sklearn.preprocessing import StandardScaler
 
 # Load the saved Random Forest model and scaler
 random_forest_model = joblib.load('best_random_forest_model.pkl')
@@ -29,15 +23,15 @@ def main():
     st.sidebar.title("Enter Wine Features")
 
     # Input fields for features (based on the provided columns)
-    alcohol = st.sidebar.slider("Alcohol", min_value=0.0, max_value=20.0, step=0.1)
-    chlorides = st.sidebar.slider("Chlorides", min_value=0.0, max_value=0.2, step=0.001)
+    alcohol = st.sidebar.slider("Alcohol", min_value=0.0, max_value=20.0, step=0.1)       
+    chlorides = st.sidebar.slider("Chlorides", min_value=0.0, max_value=0.2, step=0.001)  
     citric_acid = st.sidebar.slider("Citric Acid", min_value=0.0, max_value=1.0, step=0.01)
-    density = st.sidebar.slider("Density", min_value=0.98, max_value=1.05, step=0.001)
+    density = st.sidebar.slider("Density", min_value=0.98, max_value=1.05, step=0.001)    
     fixed_acidity = st.sidebar.slider("Fixed Acidity", min_value=0.0, max_value=20.0, step=0.1)
     free_sulfur_dioxide = st.sidebar.slider("Free Sulfur Dioxide", min_value=0, max_value=100, step=1)
     pH = st.sidebar.slider("pH", min_value=2.5, max_value=4.0, step=0.01)
     residual_sugar = st.sidebar.slider("Residual Sugar", min_value=0.0, max_value=15.0, step=0.1)
-    sulphates = st.sidebar.slider("Sulphates", min_value=0.0, max_value=2.0, step=0.01)
+    sulphates = st.sidebar.slider("Sulphates", min_value=0.0, max_value=2.0, step=0.01)   
     total_sulfur_dioxide = st.sidebar.slider("Total Sulfur Dioxide", min_value=0, max_value=300, step=1)
     volatile_acidity = st.sidebar.slider("Volatile Acidity", min_value=0.0, max_value=1.5, step=0.01)
 
@@ -62,19 +56,19 @@ def main():
     # Display the result
     st.subheader("Prediction:")
     if prediction == 3:
-        st.write("The wine is predicted to be of **quality 3** (very poor quality).")
+        st.write("The wine is predicted to be of **quality 3** (very poor quality).")     
     elif prediction == 4:
         st.write("The wine is predicted to be of **quality 4** (poor quality).")
     elif prediction == 5:
         st.write("The wine is predicted to be of **quality 5** (low quality).")
     elif prediction == 6:
-        st.write("The wine is predicted to be of **quality 6** (standard quality).")
+        st.write("The wine is predicted to be of **quality 6** (standard quality).")      
     elif prediction == 7:
         st.write("The wine is predicted to be of **quality 7** (high quality).")
     elif prediction == 8:
-        st.write("The wine is predicted to be of **quality 8** (very high quality).")
+        st.write("The wine is predicted to be of **quality 8** (very high quality).")     
     elif prediction == 9:
-        st.write("The wine is predicted to be of **quality 9** (excellent quality).")
+        st.write("The wine is predicted to be of **quality 9** (excellent quality).")     
     else:
         st.write("The wine quality prediction is not within the expected range.")
 
@@ -84,10 +78,8 @@ def main():
 # Run the app
 if __name__ == "__main__":
     main()
-
-
-# In[ ]:
-
+   
+   
 
 
 
